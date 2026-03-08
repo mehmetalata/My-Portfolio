@@ -2,7 +2,7 @@
 
 Bilgisayar Mühendisliği öğrencisi olarak geliştirdiğim projeleri, yeteneklerimi ve özgeçmişimi sergilediğim kişisel web sitem.
 
-🔗 **Canlı Site:** [https://mehmetalataa.github.io](https://mehmetalataa.github.io)
+🔗 **Canlı Site:** https://www.mehmetalata.com.tr
 
 ## 🛠️ Kullanılan Teknolojiler
 
