@@ -754,6 +754,7 @@ img { display: block; max-width: 100%; }
 }
 
 .btn-project-android {
+  flex: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
