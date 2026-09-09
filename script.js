@@ -152,48 +152,51 @@
   sections.forEach((s) => sectionObserver.observe(s));
 
   /* ────────────────────────────────────────
-     6. IMAGE SLIDER — Apartman Projesi
+     6. IMAGE SLIDER — Apartman Projesi (Discrete Mockup Showcase)
   ──────────────────────────────────────── */
   class AptSlider {
     constructor(options) {
       this.slider   = document.getElementById(options.sliderId);
-      this.track    = document.getElementById(options.trackId);
+      this.container= document.getElementById(options.slidesId || options.trackId);
       this.prevBtn  = document.getElementById(options.prevId);
       this.nextBtn  = document.getElementById(options.nextId);
       this.dotsWrap = document.getElementById(options.dotsId);
+      this.tabsWrap = document.getElementById(options.tabsId);
 
-      if (!this.slider || !this.track) return;
+      if (!this.slider || !this.container) return;
 
-      this.slides    = this.track.querySelectorAll('.slide');
+      this.slides    = this.container.querySelectorAll('.slide');
       this.dots      = this.dotsWrap ? this.dotsWrap.querySelectorAll('.slider-dot') : [];
+      this.tabs      = this.tabsWrap ? this.tabsWrap.querySelectorAll('.screen-tab') : [];
       this.current   = 0;
       this.total     = this.slides.length;
-      this.isDragging = false;
-      this.startX    = 0;
-      this.dragDelta = 0;
-      this.autoId    = null;
 
       this._bind();
       this._updateUI();
     }
 
     _goTo(index) {
-      // Wrap around
       this.current = (index + this.total) % this.total;
       this._updateUI();
     }
 
     _updateUI() {
-      this.track.style.transform = `translateX(-${this.current * 100}%)`;
-
       this.slides.forEach((s, i) => {
-        s.setAttribute('aria-hidden', i !== this.current);
+        const active = i === this.current;
+        s.classList.toggle('active', active);
+        s.setAttribute('aria-hidden', !active);
       });
 
       this.dots.forEach((d, i) => {
         const active = i === this.current;
         d.classList.toggle('active', active);
         d.setAttribute('aria-selected', active);
+      });
+
+      this.tabs.forEach((t, i) => {
+        const active = i === this.current;
+        t.classList.toggle('active', active);
+        t.setAttribute('aria-selected', active);
       });
     }
 
@@ -203,6 +206,10 @@
       this.slider.addEventListener('click',      stopProp);
       this.slider.addEventListener('mousedown',  stopProp);
       this.slider.addEventListener('touchstart', stopProp, { passive: true });
+
+      if (this.tabsWrap) {
+        this.tabsWrap.addEventListener('click', stopProp);
+      }
 
       // Arrow buttons
       this.prevBtn && this.prevBtn.addEventListener('click', (e) => {
@@ -222,6 +229,14 @@
         });
       });
 
+      // Tab clicks
+      this.tabs.forEach((tab, i) => {
+        tab.addEventListener('click', (e) => {
+          e.stopPropagation();
+          this._goTo(i);
+        });
+      });
+
       // Keyboard (when slider is focused)
       this.slider.setAttribute('tabindex', '0');
       this.slider.addEventListener('keydown', (e) => {
@@ -229,42 +244,16 @@
         if (e.key === 'ArrowRight') { e.preventDefault(); this._goTo(this.current + 1); }
       });
 
-      // Mouse drag
-      this.slider.addEventListener('mousedown', (e) => {
-        this.isDragging = true;
-        this.startX = e.clientX;
-        this.track.style.transition = 'none';
-      });
-      window.addEventListener('mousemove', (e) => {
-        if (!this.isDragging) return;
-        this.dragDelta = e.clientX - this.startX;
-      });
-      window.addEventListener('mouseup', () => {
-        if (!this.isDragging) return;
-        this.isDragging = false;
-        this.track.style.transition = '';
-        if (Math.abs(this.dragDelta) > 50) {
-          this._goTo(this.dragDelta < 0 ? this.current + 1 : this.current - 1);
-        } else {
-          this._updateUI(); // snap back
-        }
-        this.dragDelta = 0;
-      });
-
       // Touch swipe
       let touchStartX = 0;
       this.slider.addEventListener('touchstart', (e) => {
         touchStartX = e.touches[0].clientX;
-        this.track.style.transition = 'none';
       }, { passive: true });
 
       this.slider.addEventListener('touchend', (e) => {
-        this.track.style.transition = '';
         const diff = touchStartX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 40) {
+        if (Math.abs(diff) > 35) {
           this._goTo(diff > 0 ? this.current + 1 : this.current - 1);
-        } else {
-          this._updateUI();
         }
       }, { passive: true });
     }
@@ -273,10 +262,11 @@
   // Initialize the apartment project slider
   new AptSlider({
     sliderId: 'apt-slider',
-    trackId:  'apt-slider-track',
+    slidesId: 'apt-slider-slides',
     prevId:   'apt-prev',
     nextId:   'apt-next',
     dotsId:   'apt-dots',
+    tabsId:   'apt-tabs',
   });
 
 })();

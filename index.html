@@ -269,37 +269,50 @@
       <!-- ★ FEATURED PROJECT — Apartman & Site Yönetim Sistemi -->
       <article class="project-card featured reveal" id="project-apartman">
 
-        <!-- Image Slider -->
-        <div class="project-slider" id="apt-slider" aria-label="Proje ekran görüntüleri">
-          <div class="slider-track" id="apt-slider-track">
-            <div class="slide" aria-hidden="false">
-              <img src="apt-1.png" alt="Apartman Kasası ve Bütçe Yönetimi" loading="eager">
-            </div>
-            <div class="slide" aria-hidden="true">
-              <img src="apt-2.png" alt="Duyurular ve Hızlı Bilgilendirme" loading="lazy">
-            </div>
-            <div class="slide" aria-hidden="true">
-              <img src="apt-3.png" alt="Aidat ve Ödeme Takibi" loading="lazy">
-            </div>
-            <div class="slide" aria-hidden="true">
-              <img src="apt-4.png" alt="Arıza ve Talep Yönetimi" loading="lazy">
-            </div>
+        <!-- Showcase Column (Phone Mockup Display) -->
+        <div class="project-showcase-col">
+          <!-- Screen Selector Tabs -->
+          <div class="slider-screen-tabs" id="apt-tabs" role="tablist" aria-label="Uygulama Ekranları">
+            <button class="screen-tab active" data-slide="0" role="tab" aria-selected="true">Kasa</button>
+            <button class="screen-tab" data-slide="1" role="tab" aria-selected="false">Duyuru</button>
+            <button class="screen-tab" data-slide="2" role="tab" aria-selected="false">Aidat</button>
+            <button class="screen-tab" data-slide="3" role="tab" aria-selected="false">Talep</button>
           </div>
 
-          <!-- Arrow buttons -->
-          <button class="slider-btn slider-prev" id="apt-prev" aria-label="Önceki görsel">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <button class="slider-btn slider-next" id="apt-next" aria-label="Sonraki görsel">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
+          <!-- Phone Mockup Frame -->
+          <div class="phone-mockup-frame">
+            <div class="project-slider" id="apt-slider" aria-label="Proje ekran görüntüleri">
+              <div class="slider-slides" id="apt-slider-slides">
+                <div class="slide active" aria-hidden="false">
+                  <img src="apt-1.png" alt="Apartman Kasası ve Bütçe Yönetimi" loading="eager">
+                </div>
+                <div class="slide" aria-hidden="true">
+                  <img src="apt-2.png" alt="Duyurular ve Hızlı Bilgilendirme" loading="lazy">
+                </div>
+                <div class="slide" aria-hidden="true">
+                  <img src="apt-3.png" alt="Aidat ve Ödeme Takibi" loading="lazy">
+                </div>
+                <div class="slide" aria-hidden="true">
+                  <img src="apt-4.png" alt="Arıza ve Talep Yönetimi" loading="lazy">
+                </div>
+              </div>
 
-          <!-- Dot indicators -->
-          <div class="slider-dots" id="apt-dots" role="tablist" aria-label="Görsel göstergeler">
-            <button class="slider-dot active" role="tab" aria-selected="true" aria-label="Görsel 1"></button>
-            <button class="slider-dot" role="tab" aria-selected="false" aria-label="Görsel 2"></button>
-            <button class="slider-dot" role="tab" aria-selected="false" aria-label="Görsel 3"></button>
-            <button class="slider-dot" role="tab" aria-selected="false" aria-label="Görsel 4"></button>
+              <!-- Arrow buttons -->
+              <button class="slider-btn slider-prev" id="apt-prev" aria-label="Önceki görsel">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button class="slider-btn slider-next" id="apt-next" aria-label="Sonraki görsel">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+
+              <!-- Dot indicators -->
+              <div class="slider-dots" id="apt-dots" role="tablist" aria-label="Görsel göstergeler">
+                <button class="slider-dot active" role="tab" aria-selected="true" aria-label="Görsel 1"></button>
+                <button class="slider-dot" role="tab" aria-selected="false" aria-label="Görsel 2"></button>
+                <button class="slider-dot" role="tab" aria-selected="false" aria-label="Görsel 3"></button>
+                <button class="slider-dot" role="tab" aria-selected="false" aria-label="Görsel 4"></button>
+              </div>
+            </div>
           </div>
         </div>
 

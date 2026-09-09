@@ -1031,13 +1031,12 @@ footer {
 }
 .featured-badge i { font-size: 0.65rem; }
 
-/* Featured card — full width, horizontal split */
+/* Featured card — full width, 2-column with phone mockup */
 .project-card.featured {
   grid-column: span 2;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  flex-direction: unset;
-  min-height: 340px;
+  grid-template-columns: 320px 1fr;
+  align-items: stretch;
   border-color: rgba(99,102,241,0.25);
   background: linear-gradient(
     135deg,
@@ -1067,48 +1066,99 @@ footer {
     inset 0 0 40px rgba(99,102,241,0.04);
 }
 
-/* Featured body fills right column */
-.project-card.featured .project-body {
-  padding: 2rem 2rem 2rem 1.75rem;
-  border-left: 1px solid var(--border);
+/* Left Column: Dedicated Phone Showcase Area */
+.project-showcase-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 1.75rem 1.25rem;
+  background: rgba(8, 10, 18, 0.45);
+  border-right: 1px solid var(--border);
 }
 
-.project-card.featured h3 {
-  font-size: 1.25rem;
+/* Screen Selector Tabs */
+.slider-screen-tabs {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(15, 17, 28, 0.75);
+  padding: 4px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.screen-tab {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 4px 9px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  font-family: inherit;
+}
+.screen-tab:hover {
+  color: var(--text-primary);
+}
+.screen-tab.active {
+  background: var(--accent-1);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.45);
 }
 
-/* ============================================================
-   IMAGE SLIDER
-   ============================================================ */
+/* Phone Mockup Frame (Sleek Compact Hardware Outline) */
+.phone-mockup-frame {
+  position: relative;
+  width: 215px;
+  aspect-ratio: 9 / 16;
+  border-radius: 26px;
+  padding: 5px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.22), rgba(255,255,255,0.04));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.75), 0 0 24px rgba(99, 102, 241, 0.12);
+}
+
+/* Slider inside frame */
 .project-slider {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 300px;
+  border-radius: 21px;
   overflow: hidden;
-  border-radius: 0;               /* card handles radius */
   background: #0d0d18;
   user-select: none;
   -webkit-user-select: none;
-  cursor: grab;
-}
-.project-slider:active { cursor: grabbing; }
-
-/* Slide track — flex row */
-.slider-track {
-  display: flex;
-  height: 100%;
-  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform;
 }
 
-/* Individual slide */
-.slide {
-  min-width: 100%;
-  height: 100%;
-  flex-shrink: 0;
+/* Slides container: stacked for clean discrete crossfade */
+.slider-slides {
   position: relative;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+/* Individual slide (Standalone Mockup, NOT continuous strip) */
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  transform: scale(0.96);
+  pointer-events: none;
+}
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  pointer-events: auto;
 }
 
 /* Real image inside slide */
@@ -1116,45 +1166,8 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top;
-  pointer-events: none;
-  transition: transform 0.5s ease;
   display: block;
-}
-
-/* Placeholder (until real images are added) */
-.slide-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: linear-gradient(135deg, #0d0d18 0%, #111827 100%);
-  border-right: 1px solid var(--border);
-  color: var(--text-muted);
-  text-align: center;
-  padding: 2rem;
-}
-.slide-placeholder i {
-  font-size: 2.5rem;
-  color: var(--accent-1);
-  opacity: 0.35;
-}
-.slide-placeholder span {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-}
-.slide-placeholder small {
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  font-family: monospace;
-  background: rgba(99,102,241,0.08);
-  padding: 3px 10px;
-  border-radius: 4px;
-  border: 1px solid var(--border);
+  pointer-events: none;
 }
 
 /* Prev / Next arrow buttons */
@@ -1163,16 +1176,16 @@ footer {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.15);
-  background: rgba(10,10,18,0.75);
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(10,10,18,0.8);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.5);
   color: var(--text-primary);
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -1187,45 +1200,59 @@ footer {
   border-color: transparent;
   transform: translateY(-50%) scale(1.1);
 }
-.slider-prev { left: 10px; }
-.slider-next { right: 10px; }
+.slider-prev { left: 8px; }
+.slider-next { right: 8px; }
 
+/* Dot indicators */
 .slider-dots {
   position: absolute;
-  bottom: 14px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
   z-index: 10;
-  padding: 5px 10px;
+  padding: 4px 8px;
   border-radius: 20px;
-  background: rgba(10, 10, 18, 0.65);
+  background: rgba(10, 10, 18, 0.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 .slider-dot {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   border: none;
-  background: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.35);
   cursor: pointer;
   padding: 0;
   transition: background 0.25s ease, transform 0.25s ease, width 0.3s ease;
 }
 .slider-dot.active {
   background: var(--accent-1);
-  width: 22px;
+  width: 18px;
   border-radius: 4px;
   transform: none;
 }
 .slider-dot:hover:not(.active) {
-  background: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.7);
   transform: scale(1.2);
+}
+
+/* Featured body fills right column */
+.project-card.featured .project-body {
+  padding: 2.25rem 2rem 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-card.featured h3 {
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
 }
 
 /* ── Responsive: Featured card ── */
@@ -1235,23 +1262,25 @@ footer {
     grid-template-columns: 1fr;
     min-height: auto;
   }
-  .project-slider {
-    min-height: 260px;
+  .project-showcase-col {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 2rem 1rem;
+  }
+  .phone-mockup-frame {
+    width: 210px;
   }
   .project-card.featured .project-body {
-    border-left: none;
-    border-top: 1px solid var(--border);
-    padding: 1.5rem;
+    padding: 1.75rem 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .project-card.featured {
-    grid-column: span 1;    /* falls to 1 col grid already */
+    grid-column: span 1;
   }
-  .project-slider {
-    min-height: 220px;
+  .phone-mockup-frame {
+    width: 195px;
   }
-  /* Always show arrows on touch devices */
   .slider-btn { opacity: 0.85; }
 }
