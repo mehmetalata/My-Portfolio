@@ -1,170 +1,503 @@
 <!DOCTYPE html>
 <html lang="tr">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Mehmet Alata",
-  "url": "https://www.mehmetalata.com.tr", 
-  "jobTitle": "Bilgisayar Mühendisliği Öğrencisi",
-  "description": "Yazılım Geliştirici"
-}
-</script>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://www.mehmetalata.com.tr/" />
-    <title>Mehmet Alata | Portfolyo</title>
-    <meta name="description" content="Mehmet Alata - Bilgisayar Mühendisliği öğrencisi ve yazılım geliştiricisi.">
-    <meta name="keywords" content="Mehmet Alata, Bilgisayar Mühendisi, Yazılım, Portfolyo, C Programlama, Python">
-    <meta name="author" content="Mehmet Alata">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://www.mehmetalata.com.tr/" />
+  <title>Mehmet Alata | Yazılım Geliştirici & Portfolyo</title>
+  <meta name="description" content="Mehmet Alata — Bilgisayar Mühendisliği öğrencisi ve yazılım geliştiricisi. Flutter, Spring Boot, Java, C, Web geliştirme alanlarında projeler.">
+  <meta name="keywords" content="Mehmet Alata, Bilgisayar Mühendisi, Yazılım Geliştirici, Flutter, Spring Boot, Java, C, Portfolyo">
+  <meta name="author" content="Mehmet Alata">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mehmet Alata | Yazılım Geliştirici">
+  <meta property="og:description" content="Bilgisayar Mühendisliği öğrencisi ve yazılım geliştiricisi.">
+  <meta property="og:url" content="https://www.mehmetalata.com.tr/">
+  <meta property="og:type" content="website">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mehmet Alata",
+    "url": "https://www.mehmetalata.com.tr",
+    "jobTitle": "Yazılım Geliştirici",
+    "description": "Bilgisayar Mühendisliği öğrencisi ve yazılım geliştiricisi",
+    "sameAs": [
+      "https://github.com/mehmetalata",
+      "https://www.linkedin.com/in/mehmet-alata-687003334/"
+    ]
+  }
+  </script>
 
-    <link rel="stylesheet" href="style.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <div class="logo">Mehmet Alata</div>
+  <!-- ══════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════ -->
+  <header id="navbar" role="banner">
+    <a href="#" class="nav-logo" aria-label="Ana Sayfa">M<span>.</span>Alata</a>
 
-        <nav>
-            <a href="#" class="menu-link">Ana Sayfa</a>
-            <a href="#hakkimda" class="menu-link">Hakkımda</a>
-            <a href="#projeler" class="menu-link">Projeler</a>
-            <a href="#iletisim" class="menu-link">İletişim</a>
-        </nav>
-    </header>
+    <nav role="navigation" aria-label="Ana Navigasyon">
+      <ul class="nav-links">
+        <li><a href="#hero">Ana Sayfa</a></li>
+        <li><a href="#skills">Yetenekler</a></li>
+        <li><a href="#projects">Projeler</a></li>
+        <li><a href="#contact" class="nav-cta">İletişim</a></li>
+      </ul>
+    </nav>
 
-    <div class="hero-bolumu" id="hakkimda">
-        <div class="hero-yazi">
-            <h3>MERHABA, BEN</h3>
-            <h1>Mehmet Alata</h1>
-            <p>
-                Bilgisayar Mühendisliği 3. sınıf öğrencisi olarak, yazılım dünyasının farklı katmanlarında kendimi
-                geliştiriyorum. Karmaşık sistemlerin mantığını anlamaktan ve bunları modern teknolojilerle
-                buluşturmaktan keyif alıyorum. Geliştirdiğim mobil uygulamalar ve dijital çözümlerle kullanıcı
-                deneyimini iyileştirmeye odaklanıyorum. Her yeni projede sınırlarımı zorlamaya ve güncel teknolojilerle
-                değer üretmeye devam ediyorum.
-            </p>
+    <button class="hamburger" id="hamburger-btn" aria-label="Menüyü Aç/Kapat" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
 
-            <div class="sosyal-medya">
-                <a href="https://github.com/mehmetalata" target="_blank" class="buton-sosyal">
-                    <i class="fa-brands fa-github"></i> GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/mehmet-alata-687003334/" target="_blank" class="buton-sosyal">
-                    <i class="fa-brands fa-linkedin"></i> LinkedIn
-                </a>
-            </div>
+  <!-- Mobile nav -->
+  <nav class="nav-mobile" id="nav-mobile" role="navigation" aria-label="Mobil Navigasyon">
+    <a href="#hero" id="mobile-link-home"><i class="fa-solid fa-house"></i> Ana Sayfa</a>
+    <a href="#skills" id="mobile-link-skills"><i class="fa-solid fa-code"></i> Yetenekler</a>
+    <a href="#projects" id="mobile-link-projects"><i class="fa-solid fa-folder-open"></i> Projeler</a>
+    <a href="#contact" id="mobile-link-contact"><i class="fa-solid fa-paper-plane"></i> İletişim</a>
+  </nav>
+
+
+  <!-- ══════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════ -->
+  <section id="hero" aria-labelledby="hero-heading">
+
+    <div class="hero-grid">
+
+      <!-- Left: Content -->
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Yeni Projelere Açık
         </div>
 
-        <div class="hero-resim">
-            <img src="profil_foto.jpg" alt="Mehmet Alata">
+        <p class="hero-greeting">Merhaba, ben</p>
+        <h1 class="hero-name" id="hero-heading">
+          Mehmet<br>
+          <span class="gradient-text">Alata</span>
+        </h1>
+
+        <p class="hero-title">
+          Bilgisayar Mühendisliği Öğrencisi &amp; Yazılım Geliştirici
+        </p>
+
+        <p class="hero-desc">
+          Yazılım dünyasının farklı katmanlarında kendimi geliştiriyorum. Karmaşık sistemlerin
+          mantığını anlamaktan ve bunları modern teknolojilerle buluşturmaktan keyif alıyorum.
+          Mobil uygulamalar ve dijital çözümlerle kullanıcı deneyimini iyileştirmeye odaklanıyorum.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary" id="hero-projects-btn">
+            <i class="fa-solid fa-folder-open"></i> Projelerimi Gör
+          </a>
+          <a href="#contact" class="btn-ghost" id="hero-contact-btn">
+            <i class="fa-solid fa-paper-plane"></i> İletişime Geç
+          </a>
         </div>
+
+        <div class="hero-social">
+          <a href="https://github.com/mehmetalata" target="_blank" rel="noopener noreferrer"
+             class="social-icon-link" id="hero-github-link" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/mehmet-alata-687003334/" target="_blank" rel="noopener noreferrer"
+             class="social-icon-link" id="hero-linkedin-link" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://www.instagram.com/mehmet.alata/" target="_blank" rel="noopener noreferrer"
+             class="social-icon-link" id="hero-instagram-link" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="mailto:mehmetalata6@gmail.com"
+             class="social-icon-link" id="hero-email-link" aria-label="E-posta">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Profile Image -->
+      <div class="hero-image-wrap reveal" style="justify-self:center; align-self:center;">
+        <div class="hero-ring-outer"></div>
+        <div class="hero-ring"></div>
+        <img src="profil_foto.jpg" alt="Mehmet Alata — Profil Fotoğrafı" loading="eager">
+      </div>
 
     </div>
 
-    <div class="yetenekler-bolumu">
-        <h2>Yeteneklerim</h2>
+    <div class="scroll-hint" aria-hidden="true">
+      <i class="fa-solid fa-chevron-down"></i>
+      <span>Aşağı Kaydır</span>
+    </div>
+  </section>
 
-        <div class="yetenek-grid">
-            <div class="yetenek-kutu">
-                <h3>C & Assembly</h3>
-                <p>Donanım seviyesinde kodlama ve bellek yönetimi.</p>
-            </div>
 
-            <div class="yetenek-kutu">
-                <h3>Python & Tkinter</h3>
-                <p>Masaüstü uygulamaları ve arayüz tasarımı.</p>
-            </div>
+  <!-- ══════════════════════════════════════════
+       SKILLS
+  ══════════════════════════════════════════ -->
+  <section id="skills" aria-labelledby="skills-heading">
+    <div class="section-header reveal">
+      <p class="section-label">Yetkinlikler</p>
+      <h2 id="skills-heading">Teknoloji Yığınım</h2>
+      <p>Donanımdan backend'e, mobil uygulamadan yapay zekaya geniş bir yelpazede çalışıyorum.</p>
+    </div>
 
-            <div class="yetenek-kutu">
-                <h3>VHDL & Mantık Devreleri</h3>
-                <p>Dijital devre tasarımı ve simülasyonu.</p>
-            </div>
+    <div class="skills-bento">
 
-            <div class="yetenek-kutu">
-                <h3>Web Geliştirme</h3>
-                <p>HTML, CSS ve Modern arayüz tasarımı.</p>
-            </div>
-            <div class="yetenek-kutu">
-                <h3>Mobil Uygulama (Dart & Flutter)</h3>
-                <p>Mobil arayüz tasarımı ve çapraz platform uygulama geliştirme.</p>
-            </div>
-            <div class="yetenek-kutu">
-                <h3>Yapay Zeka & LLM</h3>
-                <p>Google Colab üzerinde Gemma modelini eğiterek özel soru-cevap asistanı geliştirme deneyimi.</p>
-            </div>
+      <article class="skill-card reveal" id="skill-c-assembly">
+        <div class="skill-card-inner">
+          <div class="skill-icon"><i class="fa-solid fa-microchip"></i></div>
+          <h3>C &amp; Assembly</h3>
+          <p>Donanım seviyesinde kodlama ve bellek yönetimi.</p>
+          <div class="skill-tags">
+            <span class="skill-tag">C</span>
+            <span class="skill-tag">Assembly</span>
+            <span class="skill-tag">Bellek Yönetimi</span>
+            <span class="skill-tag">Struct</span>
+          </div>
         </div>
-    </div>
-    </div>
+      </article>
 
-    <div class="projeler-konteyner" id="projeler">
-        <h2>Projelerim</h2>
-
-        <div class="vitrin">
-
-            <div class="proje-karti">
-                <h3>Abone Yönetim Sistemi (C)</h3>
-                <img src="abone-projesi.png" class="proje-resmi">
-                <p>Struct yapıları ve dosya işlemleri.</p>
-                <a href="https://github.com/mehmetalata/Gsm-Abone-Sistemi" class="buton">İncele</a>
-            </div>
-
-            <div class="proje-karti">
-                <h3>Masaüstü Arayüzü (Python)</h3>
-                <img src="python-proje.jpeg" class="proje-resmi">
-                <p>Tkinter kütüphanesi ile kullanıcı dostu arayüz.</p>
-                <a href="https://github.com/mehmetalata/Filmpal" class="buton">İncele</a>
-            </div>
-            <div class="proje-karti">
-                <h3>Flutter Haber Uygulaması</h3>
-                <img src="news_app.jpeg" class="proje-resmi" style="object-fit: contain; background: #1a252f;">
-                <p>NewsAPI kullanarak geliştirdiğim, teknoloji, spor ve ekonomi gibi kategorilerde güncel haberleri
-                    listeleyen mobil uygulama.</p>
-                <a href="https://github.com/mehmetalata/Haber-Cepte-Flutter" class="buton" target="_blank">İncele</a>
-            </div>
-            <div class="proje-karti">
-                <h3>Flutter Film & Dizi Uygulaması</h3>
-                <img src="film_uygulaması.jpeg" class="proje-resmi" style="object-fit: contain; background: #1a252f;"
-                    alt="Film Dizi Uygulaması">
-                <p>TMDB API kullanarak geliştirdiğim, popüler filmleri listeleyen, dinamik arama yapabilen ve YouTube
-                    üzerinden fragman izleme imkanı sunan modern bir Flutter uygulaması.</p>
-                <a href="https://github.com/mehmetalata/Film-Dizi-Uygulamasi--Flutter" class="buton" target="_blank">İncele</a>
-            </div>
-
+      <!-- Backend & API -->
+      <article class="skill-card reveal" id="skill-backend">
+        <div class="skill-card-inner">
+          <div class="skill-icon"><i class="fa-brands fa-java"></i></div>
+          <h3>Backend &amp; API Geliştirme</h3>
+          <p>Spring Boot ile katmanlı mimari ve RESTful servisler tasarlıyorum.</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Spring Boot</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">RESTful API</span>
+            <span class="skill-tag">Katmanlı Mimari</span>
+          </div>
         </div>
+      </article>
+
+      <article class="skill-card reveal" id="skill-vhdl">
+        <div class="skill-card-inner">
+          <div class="skill-icon"><i class="fa-solid fa-bolt"></i></div>
+          <h3>VHDL &amp; Mantık Devreleri</h3>
+          <p>Dijital devre tasarımı ve simülasyonu.</p>
+          <div class="skill-tags">
+            <span class="skill-tag">VHDL</span>
+            <span class="skill-tag">Dijital Devre</span>
+            <span class="skill-tag">Simülasyon</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="skill-card reveal" id="skill-web">
+        <div class="skill-card-inner">
+          <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+          <h3>Web Geliştirme</h3>
+          <p>HTML, CSS ve modern arayüz tasarımı.</p>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">Responsive</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Flutter — UPDATED -->  
+      <article class="skill-card wide reveal" id="skill-flutter">
+        <div class="skill-card-inner">
+          <div class="skill-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+          <h3>Mobil Geliştirme — Dart &amp; Flutter</h3>
+          <p>Tek kod tabanıyla hem iOS hem Android için yüksek performanslı, cross-platform uygulamalar geliştiriyorum. Durum yönetimi mimarileri uygulayarak App Store ve Google Play Store yayın süreçlerini eksiksiz yönetiyorum.</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Flutter</span>
+            <span class="skill-tag">Dart</span>
+            <span class="skill-tag">Cross-Platform</span>
+            <span class="skill-tag">State Management</span>
+            <span class="skill-tag">App Store</span>
+            <span class="skill-tag">Play Store</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="skill-card wide reveal" id="skill-ai">
+        <div class="skill-card-inner">
+          <div class="skill-icon"><i class="fa-solid fa-robot"></i></div>
+          <h3>Yapay Zeka &amp; LLM</h3>
+          <p>Google Colab üzerinde Gemma modelini eğiterek özel soru-cevap asistanı geliştirme deneyimi.</p>
+          <div class="skill-tags">
+            <span class="skill-tag">LLM</span>
+            <span class="skill-tag">Gemma</span>
+            <span class="skill-tag">Google Colab</span>
+            <span class="skill-tag">Fine-tuning</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       PROJECTS
+  ══════════════════════════════════════════ -->
+  <section id="projects" aria-labelledby="projects-heading">
+    <div class="section-header reveal">
+      <p class="section-label">Çalışmalarım</p>
+      <h2 id="projects-heading">Projelerim</h2>
+      <p>Farklı teknoloji yığınlarıyla geliştirdiğim gerçek dünya projeleri.</p>
     </div>
 
-    <div id="iletisim" class="iletisim-bolumu">
-        <h2>Bana Ulaşın</h2>
-        <p>Projelerimi incelediğiniz için teşekkürler.</p>
+    <div class="projects-grid">
 
-        <a href="mailto:mehmetalata6@gmail.com" class="mail-butonu">
-            <i class="fa-solid fa-envelope"></i> Mail Gönder
+      <!-- ★ FEATURED PROJECT — Apartman & Site Yönetim Sistemi -->
+      <article class="project-card featured reveal" id="project-apartman">
+
+        <!-- Image Slider -->
+        <div class="project-slider" id="apt-slider" aria-label="Proje ekran görüntüleri">
+          <div class="slider-track" id="apt-slider-track">
+            <div class="slide" aria-hidden="false">
+              <img src="apt-1.png" alt="Apartman Kasası ve Bütçe Yönetimi" loading="eager">
+            </div>
+            <div class="slide" aria-hidden="true">
+              <img src="apt-2.png" alt="Duyurular ve Hızlı Bilgilendirme" loading="lazy">
+            </div>
+            <div class="slide" aria-hidden="true">
+              <img src="apt-3.png" alt="Aidat ve Ödeme Takibi" loading="lazy">
+            </div>
+            <div class="slide" aria-hidden="true">
+              <img src="apt-4.png" alt="Arıza ve Talep Yönetimi" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Arrow buttons -->
+          <button class="slider-btn slider-prev" id="apt-prev" aria-label="Önceki görsel">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="slider-btn slider-next" id="apt-next" aria-label="Sonraki görsel">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+
+          <!-- Dot indicators -->
+          <div class="slider-dots" id="apt-dots" role="tablist" aria-label="Görsel göstergeler">
+            <button class="slider-dot active" role="tab" aria-selected="true" aria-label="Görsel 1"></button>
+            <button class="slider-dot" role="tab" aria-selected="false" aria-label="Görsel 2"></button>
+            <button class="slider-dot" role="tab" aria-selected="false" aria-label="Görsel 3"></button>
+            <button class="slider-dot" role="tab" aria-selected="false" aria-label="Görsel 4"></button>
+          </div>
+        </div>
+
+        <!-- Card Body -->
+        <div class="project-body">
+          <div class="featured-badge">
+            <i class="fa-solid fa-star"></i> Öne Çıkan Proje
+          </div>
+          <div class="project-stack">
+            <span class="tech-tag">Flutter</span>
+            <span class="tech-tag">Dart</span>
+            <span class="tech-tag">Spring Boot</span>
+            <span class="tech-tag">REST API</span>
+            <span class="tech-tag">App Store</span>
+          </div>
+          <h3>Apartman &amp; Site Yönetim Sistemi</h3>
+          <p>
+            Apartman ve site sakinleri ile yönetim arasındaki aidat, duyuru, gelir-gider
+            ve operasyonel süreçleri yöneten, <strong>App Store'da yayında</strong> olan
+            mobil &amp; backend çözümü. Flutter ile cross-platform mobil uygulama;
+            Spring Boot ile RESTful backend katmanlı mimari.
+          </p>
+          <div class="project-actions">
+            <a href="#" target="_blank" rel="noopener noreferrer"
+               class="btn-project-primary" id="project-apt-appstore-btn">
+              <i class="fa-brands fa-apple"></i> App Store'da İncele
+            </a>
+            <a href="#" class="btn-project-ghost" id="project-apt-details-btn">
+              <i class="fa-solid fa-circle-info"></i> Detaylar
+            </a>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- Project 1 -->
+      <article class="project-card reveal" id="project-abone">
+        <div class="project-img-wrap">
+          <img src="abone-projesi.png" alt="Abone Yönetim Sistemi ekran görüntüsü" loading="lazy">
+          <div class="project-img-overlay"></div>
+        </div>
+        <div class="project-body">
+          <div class="project-stack">
+            <span class="tech-tag">C</span>
+            <span class="tech-tag">Struct</span>
+            <span class="tech-tag">Dosya I/O</span>
+          </div>
+          <h3>Abone Yönetim Sistemi</h3>
+          <p>
+            Struct yapıları ve dosya işlemleri kullanılarak C dilinde geliştirilmiş,
+            GSM abone verilerini yönetmeye yarayan konsol uygulaması.
+          </p>
+          <div class="project-actions">
+            <a href="https://github.com/mehmetalata/Gsm-Abone-Sistemi" target="_blank" rel="noopener noreferrer"
+               class="btn-project-primary" id="project-abone-btn">
+              <i class="fa-brands fa-github"></i> Kaynak Kod
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project-card reveal" id="project-python">
+        <div class="project-img-wrap">
+          <img src="python-proje.jpeg" alt="Masaüstü Arayüzü Python ekran görüntüsü" loading="lazy">
+          <div class="project-img-overlay"></div>
+        </div>
+        <div class="project-body">
+          <div class="project-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Tkinter</span>
+            <span class="tech-tag">GUI</span>
+          </div>
+          <h3>Masaüstü Arayüzü — FilmPal</h3>
+          <p>
+            Tkinter kütüphanesi ile geliştirilmiş, kullanıcı dostu masaüstü arayüzü.
+            Film takip ve listeleme özelliklerine sahip Python uygulaması.
+          </p>
+          <div class="project-actions">
+            <a href="https://github.com/mehmetalata/Filmpal" target="_blank" rel="noopener noreferrer"
+               class="btn-project-primary" id="project-filmpal-btn">
+              <i class="fa-brands fa-github"></i> Kaynak Kod
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project-card reveal" id="project-news">
+        <div class="project-img-wrap" style="background:#0d0d18;">
+          <img src="news_app.jpeg" alt="Flutter Haber Uygulaması ekran görüntüsü" loading="lazy"
+               style="object-fit:contain;">
+          <div class="project-img-overlay"></div>
+        </div>
+        <div class="project-body">
+          <div class="project-stack">
+            <span class="tech-tag">Flutter</span>
+            <span class="tech-tag">Dart</span>
+            <span class="tech-tag">NewsAPI</span>
+          </div>
+          <h3>Haber Cepte — Flutter Haber Uygulaması</h3>
+          <p>
+            NewsAPI kullanarak geliştirdiğim, teknoloji, spor ve ekonomi gibi
+            kategorilerde güncel haberleri listeleyen mobil uygulama.
+          </p>
+          <div class="project-actions">
+            <a href="https://github.com/mehmetalata/Haber-Cepte-Flutter" target="_blank" rel="noopener noreferrer"
+               class="btn-project-primary" id="project-news-btn">
+              <i class="fa-brands fa-github"></i> Kaynak Kod
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="project-card reveal" id="project-film">
+        <div class="project-img-wrap" style="background:#0d0d18;">
+          <img src="film_uygulaması.jpeg" alt="Flutter Film ve Dizi Uygulaması ekran görüntüsü" loading="lazy"
+               style="object-fit:contain;">
+          <div class="project-img-overlay"></div>
+        </div>
+        <div class="project-body">
+          <div class="project-stack">
+            <span class="tech-tag">Flutter</span>
+            <span class="tech-tag">Dart</span>
+            <span class="tech-tag">TMDB API</span>
+            <span class="tech-tag">YouTube</span>
+          </div>
+          <h3>Film &amp; Dizi Uygulaması</h3>
+          <p>
+            TMDB API kullanarak geliştirdiğim, popüler filmleri listeleyen, dinamik arama
+            yapabilen ve YouTube üzerinden fragman izleme imkânı sunan modern Flutter uygulaması.
+          </p>
+          <div class="project-actions">
+            <a href="https://github.com/mehmetalata/Film-Dizi-Uygulamasi--Flutter" target="_blank" rel="noopener noreferrer"
+               class="btn-project-primary" id="project-film-btn">
+              <i class="fa-brands fa-github"></i> Kaynak Kod
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       CONTACT
+  ══════════════════════════════════════════ -->
+  <section id="contact" aria-labelledby="contact-heading">
+    <div class="contact-wrap reveal">
+      <p class="section-label">İletişim</p>
+      <h2 id="contact-heading">Bana Ulaşın</h2>
+      <p>
+        Projelerimi incelediğiniz için teşekkürler. Bir fikriniz, teklifniz veya sadece
+        sohbet etmek ister misiniz? Yanıt vermekten memnuniyet duyarım.
+      </p>
+
+      <a href="mailto:mehmetalata6@gmail.com" class="contact-email-btn" id="contact-email-btn">
+        <i class="fa-solid fa-envelope"></i> mehmetalata6@gmail.com
+      </a>
+
+      <div class="contact-divider">Ya da sosyal medyadan ulaşın</div>
+
+      <div class="contact-social">
+        <a href="https://github.com/mehmetalata" target="_blank" rel="noopener noreferrer"
+           class="contact-social-link" id="contact-github-link">
+          <i class="fa-brands fa-github"></i> GitHub
         </a>
-        <div class="footer-sosyal">
+        <a href="https://www.linkedin.com/in/mehmet-alata-687003334/" target="_blank" rel="noopener noreferrer"
+           class="contact-social-link" id="contact-linkedin-link">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://www.instagram.com/mehmet.alata/" target="_blank" rel="noopener noreferrer"
+           class="contact-social-link" id="contact-instagram-link">
+          <i class="fa-brands fa-instagram"></i> Instagram
+        </a>
+      </div>
+    </div>
+  </section>
 
-            <a href="https://www.instagram.com/mehmet.alata/" target="_blank">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
 
-            <a href="https://www.linkedin.com/in/mehmet-alata-687003334/" target="_blank">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="footer-logo">M<span>.</span>Alata</div>
+    <p class="footer-copy">© 2025 Mehmet Alata. Tüm hakları saklıdır.</p>
+    <a href="#hero" class="scroll-top-btn" id="scroll-top-btn" aria-label="Sayfanın Başına Dön">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+  </footer>
 
-            <a href="https://github.com/mehmetalata" target="_blank">
-                <i class="fa-brands fa-github"></i>
-            </a>
 
-        </div>
+  <!-- ══════════════════════════════════════════
+       SCRIPTS
+  ══════════════════════════════════════════ -->
+  <script src="script.js" defer></script>
 
 </body>
-
 </html>
